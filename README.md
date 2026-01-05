@@ -7,7 +7,6 @@
 ```bash
 cd backend
 cp .env.example .env
-# Edit .env file with your API key (already set by default)
 npm install
 npm run start:dev
 ```
