@@ -129,8 +129,11 @@ export class CurrencyConverterComponent implements OnInit {
       },
       error: (error) => {
         console.error('Conversion error:', error);
-        this.snackBar.open('Failed to convert currency', 'Close', {
-          duration: 3000,
+        const errorMessage = error.error?.message || 
+                            error.message || 
+                            'Failed to convert currency';
+        this.snackBar.open(errorMessage, 'Close', {
+          duration: 4000,
         });
         this.isLoading = false;
       },

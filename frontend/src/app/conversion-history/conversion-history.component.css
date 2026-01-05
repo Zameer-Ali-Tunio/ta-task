@@ -55,11 +55,13 @@
 .history-item {
   padding: 16px 0;
   height: auto;
+  display: block;
 }
 
 .history-item-content {
   width: 100%;
   padding: 8px 0;
+  display: block;
 }
 
 .history-main {
@@ -102,6 +104,7 @@
 .timestamp {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.54);
+  white-space: nowrap;
 }
 
 .historical-chip {
@@ -122,25 +125,98 @@
   font-size: 12px;
   color: rgba(0, 0, 0, 0.6);
   margin-top: 4px;
+  line-height: 1.4;
 }
 
 mat-divider {
   margin-top: 16px;
 }
 
+/* Override Material list item styles to show content */
+::ng-deep .history-list .mat-mdc-list-item {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+::ng-deep .history-list .mat-mdc-list-item .mdc-list-item__content {
+  display: block !important;
+  overflow: visible !important;
+  width: 100% !important;
+}
+
+::ng-deep .history-list .mat-mdc-list-item .mdc-list-item__primary-text {
+  display: block !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
 /* Mobile-first responsive design */
 @media (max-width: 600px) {
   .history-container {
+    padding: 4px;
+  }
+
+  .history-card {
+    box-shadow: none;
+  }
+
+  .history-card mat-card-content {
     padding: 8px;
   }
 
+  .history-header {
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .history-card mat-card-title {
+    font-size: 18px;
+    gap: 6px;
+  }
+
+  .history-card mat-card-title mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .empty-state {
+    padding: 32px 16px;
+  }
+
+  .empty-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .empty-state p {
+    font-size: 14px;
+  }
+
+  .hint {
+    font-size: 12px;
+  }
+
+  .history-item {
+    padding: 12px 4px;
+  }
+
+  .history-item-content {
+    padding: 4px 0;
+  }
+
   .conversion-amounts {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
   }
 
   .arrow-icon {
-    transform: rotate(90deg);
+    transform: none;
+    margin: 0 2px;
   }
 
   .from-amount,
@@ -153,8 +229,40 @@ mat-divider {
   }
 
   .history-meta {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+
+  .timestamp {
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .historical-chip {
+    font-size: 10px;
+    height: 20px;
+    padding: 0 6px;
+  }
+
+  .historical-chip mat-icon {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+  }
+
+  .exchange-rate-info {
+    font-size: 11px;
+    margin-top: 6px;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+
+  mat-divider {
+    margin-top: 12px;
   }
 }

@@ -3,6 +3,9 @@ mat-toolbar {
   align-items: center;
   gap: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .toolbar-title {
@@ -25,17 +28,44 @@ mat-toolbar {
   padding: 16px 0;
 }
 
+::ng-deep .mat-mdc-tab-group {
+  background: transparent;
+}
+
 /* Mobile-first responsive design */
 @media (max-width: 600px) {
+  mat-toolbar {
+    padding: 0 8px;
+    min-height: 56px;
+  }
+
+  mat-toolbar mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
   .toolbar-title {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .main-content {
-    padding: 8px 0;
+    padding: 0;
+    min-height: calc(100vh - 56px);
   }
 
   ::ng-deep .mat-mdc-tab-body-wrapper {
-    padding: 8px 0;
+    padding: 0;
+  }
+
+  ::ng-deep .mat-mdc-tab-header {
+    background: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  ::ng-deep .mat-mdc-tab-label {
+    min-width: 80px;
+    padding: 0 12px;
+    font-size: 14px;
   }
 }
