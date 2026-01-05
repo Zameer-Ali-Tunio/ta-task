@@ -72,11 +72,30 @@ export class CurrencyService {
           date: date,
         },
       });
+      if (response.data && response.data.data && response.data.data[date]) {
+        const historicalData = response.data.data[date];
+        return {
+          data: historicalData,
+          query: response.data.query || {
+            base_currency: baseCurrency,
+            timestamp: Date.now(),
+          },
+        };
+      }
       return response.data;
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Historical exchange rate error:', {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status,
+      });
+      const errorMessage = error.response?.data?.message || 
+                          error.response?.data?.error?.message || 
+                          error.message || 
+                          'Failed to fetch historical exchange rate';
       throw new HttpException(
-        'Failed to fetch historical exchange rate',
-        HttpStatus.INTERNAL_SERVER_ERROR,
+        errorMessage,
+        error.response?.status || HttpStatus.INTERNAL_SERVER_ERROR,
       );
     }
   }
