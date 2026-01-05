@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <mat-icon>currency_exchange</mat-icon>
+  <span class="toolbar-title">{{ title }}</span>
+</mat-toolbar>
+
+<main class="main-content">
+  <mat-tab-group animationDuration="300ms" class="main-tabs" (selectedTabChange)="onTabChange($event)">
+    <mat-tab label="Converter">
+      <app-currency-converter></app-currency-converter>
+    </mat-tab>
+    <mat-tab label="History">
+      <app-conversion-history #historyComponent></app-conversion-history>
+    </mat-tab>
+  </mat-tab-group>
+</main>

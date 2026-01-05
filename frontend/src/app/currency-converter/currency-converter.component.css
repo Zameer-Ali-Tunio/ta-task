@@ -1,0 +1,123 @@
+.converter-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.converter-card {
+  width: 100%;
+}
+
+.converter-card mat-card-header {
+  margin-bottom: 24px;
+}
+
+.converter-card mat-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.form-row {
+  margin-bottom: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.currency-selectors {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.currency-field {
+  flex: 1;
+  min-width: 140px;
+}
+
+.swap-button {
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.convert-button {
+  width: 100%;
+  height: 48px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.button-spinner {
+  display: inline-block;
+}
+
+.result-container {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.result-box {
+  text-align: center;
+  padding: 24px;
+  background: rgba(63, 81, 181, 0.05);
+  border-radius: 8px;
+}
+
+.result-amount {
+  font-size: 32px;
+  font-weight: 600;
+  color: #3f51b5;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.result-currency {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 12px;
+}
+
+.exchange-rate {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.54);
+  margin-top: 8px;
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 600px) {
+  .converter-container {
+    padding: 8px;
+  }
+
+  .currency-selectors {
+    flex-direction: column;
+  }
+
+  .currency-field {
+    width: 100%;
+  }
+
+  .swap-button {
+    align-self: center;
+    margin: 4px 0;
+  }
+
+  .result-amount {
+    font-size: 24px;
+  }
+
+  .result-currency {
+    font-size: 18px;
+  }
+}
