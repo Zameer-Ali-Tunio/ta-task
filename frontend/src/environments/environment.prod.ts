@@ -4,5 +4,5 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'https://your-backend-url.com/api/currency', // Update this with your deployed backend URL
+  apiUrl: 'https://modest-radiance-production-529b.up.railway.app/api/currency', // Update this with your deployed backend URL
 };
