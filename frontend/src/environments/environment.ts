@@ -3,5 +3,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:3000/api/currency',
+  apiUrl: 'https://modest-radiance-production-529b.up.railway.app/api/currency',
 };
